@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Fresh Sans Medium";
+  font-display: fallback;
+  src: url(https://cdn0.woolworths.media/wowssr/browser/assets/fonts/fresh-sans/FreshSans-Medium_1_350_web.woff2)
+      format("woff2"),
+    url(https://cdn0.woolworths.media/wowssr/browser/assets/fonts/fresh-sans/Freshsans-Medium_1_350_web.woff)
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fresh Sans Regular";
+  font-display: fallback;
+  src: url(https://cdn0.woolworths.media/wowssr/browser/assets/fonts/fresh-sans/FreshSans-Regular_1_350_web.woff2)
+      format("woff2"),
+    url(https://cdn0.woolworths.media/wowssr/browser/assets/fonts/fresh-sans/FreshSans-Regular_1_350_web.woff)
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fresh Sans Bold";
+  font-display: fallback;
+  src: url(https://cdn0.woolworths.media/wowssr/browser/assets/fonts/fresh-sans/FreshSans-Bold_1_350_web.woff2)
+      format("woff2"),
+    url(https://cdn0.woolworths.media/wowssr/browser/assets/fonts/fresh-sans/FreshSans-Bold_1_350_web.woff)
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+}

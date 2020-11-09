@@ -17,6 +17,12 @@ body {
   padding: 0;
 }
 
+body {
+  font-family: "Fresh Sans Regular", Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.25em;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -26,16 +32,10 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
   margin: 0;
 }
 
-.container {
-  background-color: lightgreen;
-  div {
-    h1 {
-      font-size: 10rem;
-    }
-  }
+p {
+  margin-bottom: 1.5rem;
 }

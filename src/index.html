@@ -1,18 +1,816 @@
-<!DOCTYPE html> <!--[if gt IE 8]><!-->
+<!DOCTYPE html>
+<!--[if gt IE 8]><!-->
 <html class="no-js">
-  <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="d-flex justify-content-center">
-        <h1>GET TO WORK!</h1>
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+
+
+
+  <section class="filters-outer">
+    <div class="filter-types">
+      <div class="inner">
+        <div class="filter-item entree activeButton">
+          <p>Entrees</p>
+        </div>
+        <div class="filter-item main">
+          <p>Mains</p>
+        </div>
+        <div class="filter-item salad">
+          <p>Salads</p>
+        </div>
+        <div class="filter-item side">
+          <p>Sides</p>
+        </div>
+        <div class="filter-item dessert">
+          <p>Desserts</p>
+        </div>
+        <div class="filter-item drink">
+          <p>Drinks</p>
+        </div>
       </div>
     </div>
-  </body>
+    <div class="filter-dietary">
+      <div class="inner">
+        <div class="copy">
+          <p>Filter by: </p>
+        </div>
+        <div class="filter-item all">
+          <p>All </p>
+        </div>
+        <div class="filter-item vegan">
+          <p>Vegan</p>
+        </div>
+        <div class="filter-item vegetarian">
+          <p>Vegetarian</p>
+        </div>
+        <div class="filter-item pescatarian">
+          <p>Pescatarian</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- do four recipes for each category, then each sub category can have one or two or none -->
+
+
+  <section class="recipes-outer">
+    <div class="inner">
+      <!-- entree, vegan -->
+      <div class="recipe-single entree all vegetarian vegan">
+        <div class="recipe-image">
+          <img src="./assets/recipe-placeholder.jpg" alt="Curry puff recipe placeholder image">
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Curry Puffs</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+              <li>Vegan</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- entree, pescatarian -->
+      <div class="recipe-single entree all pescatarian">
+        <div class="recipe-image">
+          <img src="./assets/seafood-spring-roll.jpg" alt="Seafood spring roll">
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Seafood spring roll</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- entree, normal -->
+      <div class="recipe-single entree all vegetarian">
+        <div class="recipe-image">
+          <img src="./assets/onion-bhaji.jpg" alt="Onion bhaji">
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Onion bhaji</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- entree, normal -->
+      <div class="recipe-single entree all vegetarian">
+        <div class="recipe-image">
+          <img src="./assets/goats-cheese-tart.jpg" alt="Goats cheese tart">
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Goats cheese tart</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- mains all -->
+      <div class="recipe-single main all">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Chicken Schnitzel</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- mains all, vegan, vegetarian -->
+      <div class="recipe-single main all vegetarian vegan">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Vegetable Biryani</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+              <li>Vegan</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- mains vegetarian -->
+      <div class="recipe-single main all vegetarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Green vegetable and ricotta tart</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- mains all, pescatarian -->
+      <div class="recipe-single main all pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Seafood pasta</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- salad all, vegetarian, pescatarian -->
+      <div class="recipe-single salad all vegetarian pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Greek salad</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- salad all, pescatarian -->
+      <div class="recipe-single salad all pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Octopus salad</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- salad all, vegetarian, vegan -->
+      <div class="recipe-single salad all vegan vegetarian pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Black bean salad</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegan</li>
+              <li>Vegetarian</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- sides, all -->
+      <div class="recipe-single side all">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Pork slider</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- sides, all, vegetarian -->
+      <div class="recipe-single side all vegetarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Haloumi slider</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- deserts, all, vegetarian, pescatarian -->
+      <div class="recipe-single dessert all vegetarian pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Lemon sorbet</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- deserts, all, vegetarian, pescatarian, vegan -->
+      <div class="recipe-single dessert all vegetarian pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Carrot cake</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+              <li>Vegan</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- deserts, all, vegetarian, pescatarian, vegan -->
+      <div class="recipe-single dessert all vegetarian vegan pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Tahini Almond Biscuits</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+              <li>Vegan</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- drink, all, vegetarian, vegan, pescatarian  -->
+      <div class="recipe-single drink all vegetarian pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Vodka Martini</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+              <li>Vegan</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- drink, all, vegetarian, pescatarian  -->
+      <div class="recipe-single drink all vegetarian pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Vodka Martini</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+
+
+
+
+</body>
+
 </html>
