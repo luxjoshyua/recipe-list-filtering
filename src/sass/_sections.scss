@@ -80,11 +80,9 @@
       box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
       display: none;
       &.active {
-        display: block !important;
+        display: block;
       }
-      &.inactive {
-        display: none;
-      }
+
       .recipe-image {
         img {
           min-width: 100%;
