@@ -6,7 +6,7 @@ const mealBtns = document.querySelectorAll(".filter-types .filter-item");
 const dietTypes = document.querySelectorAll(".filter-dietary .filter-item");
 // select all the recipes on page
 const recipes = document.querySelectorAll(".recipe-single");
-
+// use this as a flag to reset the last active meal to equal null
 let lastActiveMeal = null;
 mealBtns.forEach((meal) => {
   meal.addEventListener("click", (e) => {
