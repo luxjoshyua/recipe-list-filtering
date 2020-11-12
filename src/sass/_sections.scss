@@ -16,7 +16,6 @@
     .filter-item {
       padding: 20px 40px;
       box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
-
       p {
         font-family: "Fresh Sans Medium", Arial, Helvetica, sans-serif;
         font-size: 1.6rem;
@@ -80,11 +79,11 @@
       box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
       display: none;
       &.active {
-        display: block !important;
+        display: block;
       }
-      &.inactive {
-        display: none;
-      }
+      // &.inactive {
+      //   display: none;
+      // }
       .recipe-image {
         img {
           min-width: 100%;
@@ -137,4 +136,10 @@
 .activeButton {
   background-color: #ffff0075;
   border: 1px solid white;
+}
+
+.saved-recipe-list {
+  width: 100%;
+  max-width: 1240px;
+  background-color: indianred;
 }

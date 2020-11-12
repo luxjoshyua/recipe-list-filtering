@@ -18,22 +18,23 @@
   <section class="filters-outer">
     <div class="filter-types">
       <div class="inner">
-        <div class="filter-item entree">
+        <!-- set these data-attributes up so we can talk to them in the js via getAttribute() method -->
+        <div class="filter-item" data-meal-select="entree">
           <p>Entrees</p>
         </div>
-        <div class="filter-item main">
+        <div class="filter-item" data-meal-select="main">
           <p>Mains</p>
         </div>
-        <div class="filter-item salad">
+        <div class="filter-item" data-meal-select="salad">
           <p>Salads</p>
         </div>
-        <div class="filter-item side">
+        <div class="filter-item" data-meal-select="side">
           <p>Sides</p>
         </div>
-        <div class="filter-item dessert">
+        <div class="filter-item" data-meal-select="dessert">
           <p>Desserts</p>
         </div>
-        <div class="filter-item drink">
+        <div class="filter-item" data-meal-select="drink">
           <p>Drinks</p>
         </div>
       </div>
@@ -43,16 +44,16 @@
         <div class="copy">
           <p>Filter by: </p>
         </div>
-        <div class="filter-item all">
+        <div class="filter-item" data-meal-filter="all">
           <p>All </p>
         </div>
-        <div class="filter-item vegetarian">
+        <div class="filter-item" data-meal-filter="vegetarian">
           <p>Vegetarian</p>
         </div>
-        <div class="filter-item vegan">
+        <div class="filter-item" data-meal-filter="vegan">
           <p>Vegan</p>
         </div>
-        <div class="filter-item pescatarian">
+        <div class="filter-item" data-meal-filter="pescatarian">
           <p>Pescatarian</p>
         </div>
       </div>
@@ -61,6 +62,10 @@
 
 
 
+
+  <section class="saved-recipe-list">
+    <h1 class="saved-recipe-text"></h1>
+  </section>
 
   <section class="recipes-outer">
     <div class="inner">
@@ -686,6 +691,47 @@
               <li>All</li>
               <li>Vegetarian</li>
               <li>Vegan</li>
+              <li>Pescatarian</li>
+            </ul>
+          </div>
+          <div class="recipe-instructions">
+            <p>Method:</p>
+            <ul>
+              <li>1. Preheat oven</li>
+              <li>2. Wash all vegetables</li>
+              <li>3. Dice into 2cm cubes</li>
+              <li>4. Place vegetables on baking tray</li>
+              <li>5. Lightly season with olive oil and paprika</li>
+              <li>6. Place in oven for 30 minutes</li>
+              <li>7. Lightly turn vegetables after 15 minutes and apply extra seasoning if desired</li>
+              <li>8. Serve seasoned vegetables with protein of choice</li>
+            </ul>
+          </div>
+          <div class="recipe-cooking-time">
+            <p>
+              <span class="bold">
+                0:10
+              </span>Prep</p>
+            <p>
+              <span class="bold">0:20</span> Cook
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- deserts, all, vegetarian, pescatarian, vegan -->
+      <div class="recipe-single dessert all vegetarian pescatarian">
+        <div class="recipe-image">
+          <img>
+        </div>
+        <div class="inner">
+          <div class="recipe-headline">
+            <p>Chocolate mudcake</p>
+          </div>
+          <div class="dietary-types">
+            <p>Suitable for:</p>
+            <ul>
+              <li>All</li>
+              <li>Vegetarian</li>
               <li>Pescatarian</li>
             </ul>
           </div>
