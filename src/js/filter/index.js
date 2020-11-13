@@ -96,21 +96,28 @@ const filterReciplies = () => {
 };
 
 window.onload = () => {
-  console.log("page is fully loaded");
+  // console.log("page is fully loaded");
   const currentMeal = localStorage.getItem("activeMeal");
   const currentDiet = localStorage.getItem("activeDiet");
-  // currentMeal is initially an object, then gets converted to a string once saved
-  // to localStorage
+  const savedRecipeList = document.querySelector(".saved-recipe-list");
 
   recipes.forEach((recipe) => {
-    // if the recipe contains the data-attribute which is currentMeal, show it
-
+    // if user has checked both layers of filter, show both
     if (
       recipe.classList.contains(currentMeal) &&
       recipe.classList.contains(currentDiet)
     ) {
       recipe.classList.add("active", "saved");
+      if (savedRecipeList) {
+        savedRecipeList.classList.add("active");
+      }
     }
+
+    // if user has checked the first layer but not the second, show recipe
+    // if (recipe.classList.contains(currentMeal)) {
+    //   recipe.classList.add("active", "saved");
+    //   savedRecipeList.classList.add("active");
+    // }
   });
 };
 

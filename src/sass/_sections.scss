@@ -61,6 +61,7 @@
 
 .recipes-outer {
   background-color: #fafafa;
+  padding-top: 40px;
   .inner {
     max-width: 1240px;
     width: 100%;
@@ -145,8 +146,27 @@
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
+  display: none;
+  padding: 0 20px 20px;
+  &.active {
+    display: block;
+  }
   h1 {
     font-family: "Fresh Sans Medium", Arial, Helvetica, sans-serif;
     font-size: 3rem;
+    padding-bottom: 10px;
+  }
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
   }
 }
