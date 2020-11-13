@@ -4,16 +4,15 @@ const mealBtns = document.querySelectorAll(".filter-types .filter-item");
 const dietTypes = document.querySelectorAll(".filter-dietary .filter-item");
 // select all the recipes on page
 const recipes = document.querySelectorAll(".recipe-single");
+
 // use this as a flag to reset the last active meal to equal null
 let lastActiveMeal = null;
-
 mealBtns.forEach((meal) => {
   meal.addEventListener("click", (e) => {
     // remove/add the active class from the button
     if (lastActiveMeal) {
       lastActiveMeal.classList.remove("activeButton");
     }
-
     // if the last active meal equals the meal we are on
     if (lastActiveMeal === meal) {
       // set the active meal to null
@@ -47,8 +46,6 @@ dietTypes.forEach((diet) => {
   });
 });
 
-const saveLocalArray = [];
-
 const filterReciplies = () => {
   // getAttribute() method returns the value of a specified
   // attribute on the element
@@ -59,11 +56,15 @@ const filterReciplies = () => {
     ? lastActiveMeal.getAttribute("data-meal-select")
     : null;
 
-  // the active diel equals the last active diet if it contains the data attribute,
-  // otherwise set it to null
+  localStorage.setItem("activeMeal", activeMeal);
+
+  // // the active diel equals the last active diet if it contains the data attribute,
+  // // otherwise set it to null
   const activeDiet = lastActiveDiet
     ? lastActiveDiet.getAttribute("data-meal-filter")
     : null;
+
+  localStorage.setItem("activeDiet", activeDiet);
 
   // loop through all our recipes
   recipes.forEach((recipe) => {
@@ -89,20 +90,35 @@ const filterReciplies = () => {
     if (containsMeal && containsDiet) {
       // show the recipe
       recipe.classList.add("active");
-      console.log(recipe.innerHTML);
       // localStorage.setItem("recipe", recipe.innerHTML);
     }
   });
 };
 
-const saved = localStorage.getItem("recipe");
-const h1 = document.querySelector(".saved-recipe-text");
-if (saved) {
-  h1.innerHTML = saved;
-}
-// clear all my local saved data
-localStorage.clear();
+window.onload = () => {
+  console.log("page is fully loaded");
 
-// console.log("What does array look like", saveLocalArray);
+  const currentMeal = localStorage.getItem("activeMeal");
+  const currentDiet = localStorage.getItem("activeDiet");
+  const savedRecipeList = document.querySelector(".saved-recipe-list");
+  console.log(currentMeal);
+  // currentMeal is initially an object, then gets converted to a string once saved
+  // to localStorage
 
-// look at local storage here
+  recipes.forEach((recipe) => {
+    // if the recipe contains the data-attribute which is currentMeal, show it
+    if (
+      recipe.classList.contains(currentMeal) &&
+      recipe.classList.contains(currentDiet)
+    ) {
+      // show the recipe
+      savedRecipeList.appendChild(recipe);
+    }
+  });
+};
+
+// if (saved) {
+//   savedRecipeSingle.innerHTML = saved;
+// }
+// // clear all my local saved data
+// localStorage.clear();
