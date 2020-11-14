@@ -106,7 +106,6 @@ window.onload = () => {
       recipe.classList.contains(currentDiet)
     ) {
       recipe.classList.add("active", "saved");
-      // console.log("what is my recipe here", recipe);
       // get the close icon for the specific recipe
       const hideRecipe = recipe.querySelector(".recipe-close");
       // check it exists in the dom
@@ -117,11 +116,8 @@ window.onload = () => {
         hideRecipe.addEventListener("click", (e) => {
           // if clicked, hide the recipe
           recipe.classList.remove("active", "saved");
-          document.querySelector(".empty-list").innerHTML =
-            "Collection is empty!";
         });
       }
-
       // show the saved recipe list text
       if (savedRecipeList) {
         savedRecipeList.classList.add("active");
@@ -130,5 +126,7 @@ window.onload = () => {
   });
 };
 
-// // clear all my local saved data
+const emptyList = document.querySelector(".empty-list");
+
+// clear all my local saved data
 // localStorage.clear();
