@@ -12,7 +12,6 @@
     justify-content: space-between;
     max-width: 1240px;
     margin: 0 auto;
-    background-color: salmon;
     .filter-item {
       padding: 20px 40px;
       box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
@@ -41,13 +40,8 @@
     }
     .filter-item {
       box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
-      border: 1px solid black;
       padding: 20px 40px;
       margin-right: 40px;
-      &.activeButton {
-        background-color: black;
-        color: #ffffff;
-      }
       &:last-of-type {
         margin-right: 0;
       }
@@ -183,6 +177,10 @@
     font-size: 3rem;
     padding-bottom: 10px;
   }
+}
+
+.saved-two {
+  padding-top: 50px;
 }
 
 .nav {
