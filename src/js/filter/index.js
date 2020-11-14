@@ -115,7 +115,9 @@ window.onload = () => {
         // add an event listener to it
         hideRecipe.addEventListener("click", (e) => {
           // if clicked, hide the recipe
-          recipe.classList.remove("active", "saved");
+          // recipe.classList.remove("active", "saved");
+          recipe.remove();
+          showEmptyText();
         });
       }
       // show the saved recipe list text
@@ -126,7 +128,17 @@ window.onload = () => {
   });
 };
 
-const emptyList = document.querySelector(".empty-list");
+const showEmptyText = () => {
+  // should return a live list
+  // problem is, even after clicking hide,
+  // still shows active class, still sees it in the dom
+  const recipesActive = document.getElementsByClassName("recipe-single active");
+  console.log(recipesActive.length);
+  const emptyList = document.getElementsByClassName(".empty-list");
+  if (recipesActive.length < 0) {
+    emptyList.classList.add("active");
+  }
+};
 
 // clear all my local saved data
 // localStorage.clear();
