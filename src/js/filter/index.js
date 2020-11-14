@@ -90,16 +90,15 @@ const filterReciplies = () => {
     if (containsMeal && containsDiet) {
       // show the recipe
       recipe.classList.add("active");
-      // localStorage.setItem("recipe", recipe.innerHTML);
     }
   });
 };
 
 window.onload = () => {
-  // console.log("page is fully loaded");
   const currentMeal = localStorage.getItem("activeMeal");
   const currentDiet = localStorage.getItem("activeDiet");
   const savedRecipeList = document.querySelector(".saved-recipe-list");
+  // const closeIcon = document.querySelectorAll(".recipe-close");
 
   recipes.forEach((recipe) => {
     // if user has checked both layers of filter, show both
@@ -108,16 +107,25 @@ window.onload = () => {
       recipe.classList.contains(currentDiet)
     ) {
       recipe.classList.add("active", "saved");
+      console.log("what is my recipe here", recipe);
+      // get the close icon for the specific recipe
+      const hideRecipe = recipe.querySelector(".recipe-close");
+      // check it exists in the dom
+      if (hideRecipe) {
+        // show if yes
+        hideRecipe.classList.add("active");
+        // add an event listener to it
+        hideRecipe.addEventListener("click", (e) => {
+          // if clicked, hide the recipe
+          recipe.classList.remove("active", "saved");
+        });
+      }
+
+      // show the saved recipe list text
       if (savedRecipeList) {
         savedRecipeList.classList.add("active");
       }
     }
-
-    // if user has checked the first layer but not the second, show recipe
-    // if (recipe.classList.contains(currentMeal)) {
-    //   recipe.classList.add("active", "saved");
-    //   savedRecipeList.classList.add("active");
-    // }
   });
 };
 
