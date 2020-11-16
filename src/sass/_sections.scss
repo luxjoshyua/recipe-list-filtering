@@ -191,15 +191,17 @@
   }
 }
 
+.deleted {
+  border: 1px solid red;
+}
+
 .saved-two {
-  padding-top: 50px;
 }
 
 .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
   .inner {
     display: flex;
     justify-content: flex-start;

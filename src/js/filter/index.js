@@ -94,6 +94,20 @@ const filterReciplies = () => {
   });
 };
 
+// set the value of this to be an array of recipe names
+
+// const recipeNames = [];
+// recipes.forEach((recipe) => {
+//   console.log(recipe);
+// });
+
+// use localStorage to filter through the recipeNames array
+// if the
+
+// then once filter func is called, check if the recipes aren't deleted
+// localStorage.setItem("deletedRecipes");
+
+// on the first page
 window.onload = () => {
   const currentMeal = localStorage.getItem("activeMeal");
   const currentDiet = localStorage.getItem("activeDiet");
@@ -101,6 +115,7 @@ window.onload = () => {
 
   recipes.forEach((recipe) => {
     // if user has checked both layers of filter, show both
+    // console.log("recipe", recipe);
     if (
       recipe.classList.contains(currentMeal) &&
       recipe.classList.contains(currentDiet)
@@ -114,10 +129,9 @@ window.onload = () => {
         hideRecipe.classList.add("active");
         // add an event listener to it
         hideRecipe.addEventListener("click", (e) => {
-          // if clicked, hide the recipe
-          // recipe.classList.remove("active", "saved");
-          recipe.remove();
-          showEmptyText();
+          recipe.classList.remove("active", "saved");
+          // recipe.remove();
+          // showEmptyText();
         });
       }
       // show the saved recipe list text
@@ -128,17 +142,20 @@ window.onload = () => {
   });
 };
 
-const showEmptyText = () => {
-  // should return a live list
-  // problem is, even after clicking hide,
-  // still shows active class, still sees it in the dom
-  const recipesActive = document.getElementsByClassName("recipe-single active");
-  console.log(recipesActive.length);
-  const emptyList = document.getElementsByClassName(".empty-list");
-  if (recipesActive.length < 0) {
-    emptyList.classList.add("active");
-  }
-};
+// when the page first loads, it renders the html content again
+// so they're always showing the recipes even when you've said hide them
+
+// const showEmptyText = () => {
+//   // should return a live list
+//   // problem is, even after clicking hide,
+//   // still shows active class, still sees it in the dom
+//   const recipesActive = document.getElementsByClassName("recipe-single active");
+//   // console.log(recipesActive.length);
+//   const emptyList = document.getElementsByClassName(".empty-list");
+//   if (recipesActive.length < 0) {
+//     emptyList.classList.add("active");
+//   }
+// };
 
 // clear all my local saved data
 // localStorage.clear();
