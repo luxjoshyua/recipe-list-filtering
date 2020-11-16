@@ -170,6 +170,16 @@
         }
       }
     }
+    .recipe-single-saved {
+      box-shadow: none;
+      &.saved {
+        border: none;
+      }
+      .recipe-close {
+        display: block;
+        top: 20px;
+      }
+    }
   }
 }
 

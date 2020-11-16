@@ -146,6 +146,12 @@ window.onload = () => {
       // that saves the one recipe multiple times, need to do it for each recipe
       savedRecipe.innerHTML = localStorage.getItem("savedRecipe");
       savedRecipe.classList.add("active", "saved");
+      savedRecipe.querySelector(".recipe-close");
+      savedRecipe.addEventListener("click", (e) => {
+        console.log(e);
+        savedRecipe.classList.remove("active", "saved");
+        localStorage.removeItem("savedRecipe");
+      });
     });
   }
 };
