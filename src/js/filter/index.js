@@ -109,12 +109,19 @@ window.onload = () => {
     if (saveRecipe) {
       saveRecipe.addEventListener("click", (e) => {
         recipe.classList.add("test");
+
+        // now need to save this recipe to local storage so I can get it on page two
+        localStorage.setItem("savedRecipe", "test");
       });
     }
 
-    if (recipe.classList.contains("test")) {
-      recipe.classList.add("active", "saved");
-    }
+    // get the saved string
+    const savedRecipe = localStorage.getItem("savedRecipe");
+    console.log(savedRecipe); // this returns null
+    // if (recipe.classList.contains("test")) {
+
+    //   recipe.classList.add("active", "saved");
+    // }
 
     // if (
     //   recipe.classList.contains(currentMeal) &&
@@ -136,9 +143,9 @@ window.onload = () => {
     //   //   });
     //   // }
     //   // show the saved recipe list text
-    //   if (savedRecipeList) {
-    //     savedRecipeList.classList.add("active");
-    //   }
+    if (savedRecipeList) {
+      savedRecipeList.classList.add("active");
+    }
     // }
   });
 };
