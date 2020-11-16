@@ -94,9 +94,6 @@ const filterReciplies = () => {
   });
 };
 
-// use localStorage to filter through the recipeNames array
-
-// on the first page
 window.onload = () => {
   const currentMeal = localStorage.getItem("activeMeal");
   const currentDiet = localStorage.getItem("activeDiet");
@@ -104,49 +101,55 @@ window.onload = () => {
 
   recipes.forEach((recipe) => {
     // if user has checked both layers of filter, show both
-
     const saveRecipe = recipe.querySelector(".save-recipe");
-    if (saveRecipe) {
-      saveRecipe.addEventListener("click", (e) => {
-        recipe.classList.add("savedToStorage");
+    // if it exists on the page
+    // if (saveRecipe) {
+    //   // add an event listener to the div
+    //   saveRecipe.addEventListener("click", (e) => {
+    //     // add a class to the saved recipe so you can see it has been clicked
+    //     recipe.classList.add("savedToStorage");
 
-        // now need to save this recipe to local storage so I can get it on page two
-        localStorage.setItem("savedRecipe", "test");
-      });
-    }
+    //     // once that recipe has been clicked, save the recipe to localStorage, but how???
+
+    //     // it needs to be accessing a string value somehow
+
+    //     const recipe2Save = recipe;
+    //     console.log(recipe2Save);
+
+    //     // now need to save this recipe to local storage so I can get it on page two
+    //     // localStorage.setItem("savedRecipe", recipe2Save);
+    //   });
+    // }
 
     // get the saved string
-    const savedRecipe = localStorage.getItem("savedRecipe");
-    console.log(savedRecipe); // this returns null
-    // if (recipe.classList.contains("test")) {
+    // const savedRecipe = localStorage.getItem("savedRecipe");
+    // this returns an [Object HTMLDivElement]
+    // console.log(savedRecipe);
 
-    //   recipe.classList.add("active", "saved");
-    // }
+    if (
+      recipe.classList.contains(currentMeal) &&
+      recipe.classList.contains(currentDiet)
+    ) {
+      recipe.classList.add("active", "saved");
 
-    // if (
-    //   recipe.classList.contains(currentMeal) &&
-    //   recipe.classList.contains(currentDiet)
-    // ) {
-    //   recipe.classList.add("active", "saved");
-
-    //   // get the close icon for the specific recipe
-    //   const hideRecipe = recipe.querySelector(".recipe-close");
-    //   // check it exists in the dom
-    //   // if (hideRecipe) {
-    //   //   // show if yes
-    //   //   hideRecipe.classList.add("active");
-    //   //   // add an event listener to it
-    //   //   hideRecipe.addEventListener("click", (e) => {
-    //   //     recipe.classList.remove("active", "saved");
-    //   //     // recipe.remove();
-    //   //     // showEmptyText();
-    //   //   });
-    //   // }
-    //   // show the saved recipe list text
-    if (savedRecipeList) {
-      savedRecipeList.classList.add("active");
+      // get the close icon for the specific recipe
+      const hideRecipe = recipe.querySelector(".recipe-close");
+      // check it exists in the dom
+      // if (hideRecipe) {
+      //   // show if yes
+      //   hideRecipe.classList.add("active");
+      //   // add an event listener to it
+      //   hideRecipe.addEventListener("click", (e) => {
+      //     recipe.classList.remove("active", "saved");
+      //     // recipe.remove();
+      //     // showEmptyText();
+      //   });
+      // }
+      //   // show the saved recipe list text
+      if (savedRecipeList) {
+        savedRecipeList.classList.add("active");
+      }
     }
-    // }
   });
 };
 
