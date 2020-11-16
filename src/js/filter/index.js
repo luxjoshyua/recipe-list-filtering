@@ -94,18 +94,7 @@ const filterReciplies = () => {
   });
 };
 
-// set the value of this to be an array of recipe names
-
-// const recipeNames = [];
-// recipes.forEach((recipe) => {
-//   console.log(recipe);
-// });
-
 // use localStorage to filter through the recipeNames array
-// if the
-
-// then once filter func is called, check if the recipes aren't deleted
-// localStorage.setItem("deletedRecipes");
 
 // on the first page
 window.onload = () => {
@@ -115,30 +104,42 @@ window.onload = () => {
 
   recipes.forEach((recipe) => {
     // if user has checked both layers of filter, show both
-    // console.log("recipe", recipe);
-    if (
-      recipe.classList.contains(currentMeal) &&
-      recipe.classList.contains(currentDiet)
-    ) {
-      recipe.classList.add("active", "saved");
-      // get the close icon for the specific recipe
-      const hideRecipe = recipe.querySelector(".recipe-close");
-      // check it exists in the dom
-      if (hideRecipe) {
-        // show if yes
-        hideRecipe.classList.add("active");
-        // add an event listener to it
-        hideRecipe.addEventListener("click", (e) => {
-          recipe.classList.remove("active", "saved");
-          // recipe.remove();
-          // showEmptyText();
-        });
-      }
-      // show the saved recipe list text
-      if (savedRecipeList) {
-        savedRecipeList.classList.add("active");
-      }
+
+    const saveRecipe = recipe.querySelector(".save-recipe");
+    if (saveRecipe) {
+      saveRecipe.addEventListener("click", (e) => {
+        recipe.classList.add("test");
+      });
     }
+
+    if (recipe.classList.contains("test")) {
+      recipe.classList.add("active", "saved");
+    }
+
+    // if (
+    //   recipe.classList.contains(currentMeal) &&
+    //   recipe.classList.contains(currentDiet)
+    // ) {
+    //   recipe.classList.add("active", "saved");
+
+    //   // get the close icon for the specific recipe
+    //   const hideRecipe = recipe.querySelector(".recipe-close");
+    //   // check it exists in the dom
+    //   // if (hideRecipe) {
+    //   //   // show if yes
+    //   //   hideRecipe.classList.add("active");
+    //   //   // add an event listener to it
+    //   //   hideRecipe.addEventListener("click", (e) => {
+    //   //     recipe.classList.remove("active", "saved");
+    //   //     // recipe.remove();
+    //   //     // showEmptyText();
+    //   //   });
+    //   // }
+    //   // show the saved recipe list text
+    //   if (savedRecipeList) {
+    //     savedRecipeList.classList.add("active");
+    //   }
+    // }
   });
 };
 
