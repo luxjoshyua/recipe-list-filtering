@@ -108,7 +108,7 @@ window.onload = () => {
     const saveRecipe = recipe.querySelector(".save-recipe");
     if (saveRecipe) {
       saveRecipe.addEventListener("click", (e) => {
-        recipe.classList.add("test");
+        recipe.classList.add("savedToStorage");
 
         // now need to save this recipe to local storage so I can get it on page two
         localStorage.setItem("savedRecipe", "test");
