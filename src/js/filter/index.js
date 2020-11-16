@@ -95,6 +95,7 @@ const filterReciplies = () => {
 
 window.onload = () => {
   const currentMeal = localStorage.getItem("activeMeal");
+  // console.log(currentMeal);
   const currentDiet = localStorage.getItem("activeDiet");
   const savedRecipeList = document.querySelector(".saved-recipe-list");
   recipes.forEach((recipe) => {
@@ -106,12 +107,8 @@ window.onload = () => {
       saveRecipe.addEventListener("click", (e) => {
         // add a class to the saved recipe so you can see it has been clicked
         recipe.classList.add("savedToStorage");
-
-        // localStorage.setItem("savedRecipe", );
-
         // once that recipe has been clicked, save the recipe to localStorage, but how???
-
-        // it needs to access a string value somehow like we do for currentMeal and currentDiet
+        localStorage.setItem("savedRecipe", recipe.innerHTML);
       });
     }
 
@@ -140,6 +137,17 @@ window.onload = () => {
 
     // }
   });
+
+  // localStorage.getItem("savedRecipe");
+
+  const savedRecipeEl = document.querySelectorAll(".recipe-single-saved");
+  if (savedRecipeEl) {
+    savedRecipeEl.forEach((savedRecipe) => {
+      // that saves the one recipe multiple times, need to do it for each recipe
+      savedRecipe.innerHTML = localStorage.getItem("savedRecipe");
+      savedRecipe.classList.add("active", "saved");
+    });
+  }
 };
 
 // const showEmptyText = () => {
