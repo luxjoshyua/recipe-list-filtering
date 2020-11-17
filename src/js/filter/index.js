@@ -93,52 +93,39 @@ const filterReciplies = () => {
   });
 };
 
+// initialise empty array we're going to push our recipe numbers into
+const numArray = [];
+
 window.onload = () => {
-  const currentMeal = localStorage.getItem("activeMeal");
-  // console.log(currentMeal);
-  const currentDiet = localStorage.getItem("activeDiet");
   const savedRecipeList = document.querySelector(".saved-recipe-list");
   recipes.forEach((recipe) => {
-    // if user has checked both layers of filter, show both
-    const saveRecipe = recipe.querySelector(".save-recipe");
+    const saveRecipe = recipe.querySelectorAll(".save-recipe");
     // // if it exists on the page
     if (saveRecipe) {
-      // add an event listener to the div
-      saveRecipe.addEventListener("click", (e) => {
-        // add a class to the saved recipe so you can see it has been clicked
-        recipe.classList.add("savedToStorage");
-        // once that recipe has been clicked, save the recipe to localStorage, but how???
-        localStorage.setItem("savedRecipe", recipe.innerHTML);
+      saveRecipe.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          // add a class to the saved recipe so you can see it has been clicked
+          recipe.classList.add("savedToStorage");
+          // get the num for the recipe clicked
+          const num = recipe.getAttribute("data-id");
+
+          // push that number into my empty array
+          numArray.push(num);
+          console.log(numArray);
+
+          // then save the array to localStorage
+          localStorage.setItem("recipeNumber", numArray);
+
+          // once that recipe has been clicked, save the recipe to localStorage
+          // localStorage.setItem("savedRecipe", recipe.innerHTML);
+        });
       });
     }
-
-    // if (
-    //   recipe.classList.contains(currentMeal) &&
-    //   recipe.classList.contains(currentDiet)
-    // ) {
-    //   recipe.classList.add("active", "saved");
-    //   get the close icon for the specific recipe
-    //   const hideRecipe = recipe.querySelector(".recipe-close");
-    //   check it exists in the dom
-    //   if (hideRecipe) {
-    //   show if yes
-    //   hideRecipe.classList.add("active");
-    //   add an event listener to it
-    //   hideRecipe.addEventListener("click", (e) => {
-    //   recipe.classList.remove("active", "saved");
-    //   recipe.remove();
-    //   showEmptyText();
-    //   });
-    //   }
     //   show the saved recipe list text
     if (savedRecipeList) {
       savedRecipeList.classList.add("active");
     }
-
-    // }
   });
-
-  // localStorage.getItem("savedRecipe");
 
   const savedRecipeEl = document.querySelectorAll(".recipe-single-saved");
   if (savedRecipeEl) {
@@ -147,14 +134,31 @@ window.onload = () => {
       savedRecipe.innerHTML = localStorage.getItem("savedRecipe");
       savedRecipe.classList.add("active", "saved");
       savedRecipe.querySelector(".recipe-close");
-      savedRecipe.addEventListener("click", (e) => {
-        console.log(e);
+      savedRecipe.addEventListener("click", () => {
         savedRecipe.classList.remove("active", "saved");
         localStorage.removeItem("savedRecipe");
       });
     });
   }
 };
+
+// this is a list of numbers, isn't an array
+const x = localStorage.getItem("recipeNumber");
+console.log(x);
+
+/* save recipe function for each recipe clicked, not just one
+
+1. Check if the user is on the saved collections page
+
+2. If they are, get an array of items from storage. e.g. [1,2,10]
+  The items are numbers that correspond to the recipe/s clicked.
+  Each recipe has a corresponding number e.g. Curry Puffs 1, Seafood Spring Roll 2 etc
+
+3. Iterate through this array and set active class to the corresponding DOM recipe elements
+
+
+
+*/
 
 // const showEmptyText = () => {
 //   // should return a live list
