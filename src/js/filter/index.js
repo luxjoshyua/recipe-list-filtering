@@ -107,11 +107,11 @@ window.onload = () => {
           // add a class to the saved recipe so you can see it has been clicked
           recipe.classList.add("savedToStorage");
           // get the num for the recipe clicked
-          const num = recipe.getAttribute("data-id");
+          const numToSave = recipe.getAttribute("data-id");
 
           // push that number into my empty array
-          numArray.push(num);
-          console.log(numArray);
+          numArray.push(numToSave);
+          // console.log(numArray);
 
           // then save the array to localStorage
           localStorage.setItem("recipeNumber", numArray);
@@ -142,19 +142,39 @@ window.onload = () => {
   }
 };
 
-// this is a list of numbers, isn't an array
-const x = localStorage.getItem("recipeNumber");
-console.log(x);
+const showSavedRecipes = () => {
+  // get my saved numbers
+
+  const savedNum = localStorage.getItem("recipeNumber");
+  // console.log(savedNum);
+  // check if saved number/s
+  if (savedNum) {
+    let savedNumArray = Array.from(savedNum);
+    const cleanNumArr = [];
+    for (let index = 0; index < savedNumArray.length; index++) {
+      const num = savedNumArray[index];
+      if (num !== ",") {
+        cleanNumArr.push(num);
+      }
+    }
+    console.log(cleanNumArr);
+  }
+
+  // then get the strings into integers to make it easier for array iteration
+
+  // convert this to an array of numbers
+
+  // Iterate through this array and set active class to the corresponding DOM recipe elements
+};
+
+showSavedRecipes();
 
 /* save recipe function for each recipe clicked, not just one
 
 1. Check if the user is on the saved collections page
 
-2. If they are, get an array of items from storage. e.g. [1,2,10]
-  The items are numbers that correspond to the recipe/s clicked.
-  Each recipe has a corresponding number e.g. Curry Puffs 1, Seafood Spring Roll 2 etc
-
-3. Iterate through this array and set active class to the corresponding DOM recipe elements
+2. If they are, get the array of items from storage. e.g. [1,2,10]
+ 
 
 
 
