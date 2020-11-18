@@ -4,6 +4,8 @@ const mealBtns = document.querySelectorAll(".filter-types .filter-item");
 const dietTypes = document.querySelectorAll(".filter-dietary .filter-item");
 // select all the recipes on page
 const recipes = document.querySelectorAll(".recipe-single");
+// select the number data attribute of the recipe
+let recipeNumber;
 
 // use this as a flag to reset the last active meal to equal null
 let lastActiveMeal = null;
@@ -99,6 +101,8 @@ const numArray = [];
 window.onload = () => {
   const savedRecipeList = document.querySelector(".saved-recipe-list");
   recipes.forEach((recipe) => {
+    recipeNumber = recipe.getAttribute("data-id");
+    // console.log(recipeNumber);
     const saveRecipe = recipe.querySelectorAll(".save-recipe");
     // // if it exists on the page
     if (saveRecipe) {
@@ -108,16 +112,10 @@ window.onload = () => {
           recipe.classList.add("savedToStorage");
           // get the num for the recipe clicked
           const numToSave = recipe.getAttribute("data-id");
-
           // push that number into my empty array
           numArray.push(numToSave);
-          // console.log(numArray);
-
           // then save the array to localStorage
           localStorage.setItem("recipeNumber", numArray);
-
-          // once that recipe has been clicked, save the recipe to localStorage
-          // localStorage.setItem("savedRecipe", recipe.innerHTML);
         });
       });
     }
@@ -131,20 +129,20 @@ window.onload = () => {
   if (savedRecipeEl) {
     savedRecipeEl.forEach((savedRecipe) => {
       // that saves the one recipe multiple times, need to do it for each recipe
-      savedRecipe.innerHTML = localStorage.getItem("savedRecipe");
+      // savedRecipe.innerHTML = localStorage.getItem("savedRecipe");
       savedRecipe.classList.add("active", "saved");
       savedRecipe.querySelector(".recipe-close");
       savedRecipe.addEventListener("click", () => {
         savedRecipe.classList.remove("active", "saved");
-        localStorage.removeItem("savedRecipe");
+        // localStorage.removeItem("savedRecipe");
       });
     });
   }
 };
 
+// show the saved recipes in local storage on load
 const showSavedRecipes = () => {
   // get my saved numbers
-
   const savedNum = localStorage.getItem("recipeNumber");
 
   // check if saved number/s, otherwise console throws error
@@ -157,12 +155,22 @@ const showSavedRecipes = () => {
     for (let index = 0; index < savedNumArray.length; index++) {
       const num = savedNumArray[index];
       if (num !== ",") {
-        cleanNumArr.push(num);
+        // index is a string, convert to integer
+        cleanNumArr.push(+num);
       }
     }
-    console.log(cleanNumArr);
+    // now have a clean integer array [1,2,6 etc]
+    // console.log(cleanNumArr);
 
-    // get the strings into integers to make it easier for array iteration
+    console.log("my globally accessible recipe number", recipeNumber);
+
+    // get the recipe data number
+    // loop through my clean array
+    // for (let index = 0; index < cleanNumArr.length; index++) {
+    //   // this is giving you the saved number e.g. recipe 1 and 2 for every single recipe, so 1,2 but 19 times
+    //   const savedNumber = cleanNumArr[index];
+    //   console.log(savedNumber);
+    // }
   }
 
   // Iterate through this array and set active class to the corresponding DOM recipe elements
@@ -174,7 +182,7 @@ showSavedRecipes();
 
 1. Check if the user is on the saved collections page
 
-2. If they are, get the array of items from storage. e.g. [1,2,10]
+
  
 
 
