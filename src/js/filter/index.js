@@ -146,11 +146,14 @@ const showSavedRecipes = () => {
   // get my saved numbers
 
   const savedNum = localStorage.getItem("recipeNumber");
-  // console.log(savedNum);
-  // check if saved number/s
+
+  // check if saved number/s, otherwise console throws error
   if (savedNum) {
+    // convert into array
     let savedNumArray = Array.from(savedNum);
+    // setup clean array because we need to clean savedNumArr (["1", ",", "3" etc])
     const cleanNumArr = [];
+    // loop through array, just get numbers, remove commas
     for (let index = 0; index < savedNumArray.length; index++) {
       const num = savedNumArray[index];
       if (num !== ",") {
@@ -158,11 +161,9 @@ const showSavedRecipes = () => {
       }
     }
     console.log(cleanNumArr);
+
+    // get the strings into integers to make it easier for array iteration
   }
-
-  // then get the strings into integers to make it easier for array iteration
-
-  // convert this to an array of numbers
 
   // Iterate through this array and set active class to the corresponding DOM recipe elements
 };
