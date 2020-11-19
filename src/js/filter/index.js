@@ -100,14 +100,15 @@ const numArray = [];
 
 window.onload = () => {
   const savedRecipeList = document.querySelector(".saved-recipe-list");
+
   recipes.forEach((recipe) => {
     recipeNumber = recipe.getAttribute("data-id");
-    // console.log(recipeNumber);
+    // console.log(`Recipe Number = ${recipeNumber} for recipe ${recipeNumber}`);
     const saveRecipe = recipe.querySelectorAll(".save-recipe");
     // // if it exists on the page
     if (saveRecipe) {
       saveRecipe.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
+        btn.addEventListener("click", () => {
           // add a class to the saved recipe so you can see it has been clicked
           recipe.classList.add("savedToStorage");
           // get the num for the recipe clicked
@@ -144,7 +145,6 @@ window.onload = () => {
 const showSavedRecipes = () => {
   // get my saved numbers
   const savedNum = localStorage.getItem("recipeNumber");
-
   // check if saved number/s, otherwise console throws error
   if (savedNum) {
     // convert into array
@@ -160,34 +160,25 @@ const showSavedRecipes = () => {
       }
     }
     // now have a clean integer array [1,2,6 etc]
-    // console.log(cleanNumArr);
+    console.log(
+      "here is my local storage array that contains each recipe user clicked on",
+      cleanNumArr
+    );
 
     console.log("my globally accessible recipe number", recipeNumber);
 
-    // get the recipe data number
-    // loop through my clean array
-    // for (let index = 0; index < cleanNumArr.length; index++) {
-    //   // this is giving you the saved number e.g. recipe 1 and 2 for every single recipe, so 1,2 but 19 times
-    //   const savedNumber = cleanNumArr[index];
-    //   console.log(savedNumber);
-    // }
-  }
+    // loop through clean array
 
-  // Iterate through this array and set active class to the corresponding DOM recipe elements
+    // if number in array matches the recipe number
+
+    // set active class to recipe
+  }
 };
 
 showSavedRecipes();
 
-/* save recipe function for each recipe clicked, not just one
-
-1. Check if the user is on the saved collections page
-
-
- 
-
-
-
-*/
+// 1. Check if the user is on the saved collections page
+// if they are, call showSavedRecipes() func
 
 // const showEmptyText = () => {
 //   // should return a live list
