@@ -103,6 +103,7 @@ window.onload = () => {
 
   recipes.forEach((recipe) => {
     recipeNumber = recipe.getAttribute("data-id");
+    // console.log("recipe number", recipeNumber);
     // console.log(`Recipe Number = ${recipeNumber} for recipe ${recipeNumber}`);
     const saveRecipe = recipe.querySelectorAll(".save-recipe");
     // // if it exists on the page
@@ -139,10 +140,11 @@ window.onload = () => {
       });
     });
   }
+  showSavedRecipes(recipeNumber);
 };
 
 // show the saved recipes in local storage on load
-const showSavedRecipes = () => {
+const showSavedRecipes = (recipeNumber) => {
   // get my saved numbers
   const savedNum = localStorage.getItem("recipeNumber");
   // check if saved number/s, otherwise console throws error
@@ -174,8 +176,6 @@ const showSavedRecipes = () => {
     // set active class to recipe
   }
 };
-
-showSavedRecipes();
 
 // 1. Check if the user is on the saved collections page
 // if they are, call showSavedRecipes() func
