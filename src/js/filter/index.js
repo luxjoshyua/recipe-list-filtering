@@ -10,172 +10,175 @@ let recipeNumber;
 // use this as a flag to reset the last active meal to equal null
 let lastActiveMeal = null;
 mealBtns.forEach((meal) => {
-  meal.addEventListener("click", (e) => {
-    // remove/add the active class from the button
-    if (lastActiveMeal) {
-      lastActiveMeal.classList.remove("activeButton");
-    }
-    // if the last active meal equals the meal we are on
-    if (lastActiveMeal === meal) {
-      // set the active meal to null
-      lastActiveMeal = null;
-    } else {
-      // otherwise the last active meal does equal the meal
-      lastActiveMeal = meal;
-      // so set the button to be active
-      meal.classList.add("activeButton");
-    }
+    meal.addEventListener("click", (e) => {
+        // remove/add the active class from the button
+        if (lastActiveMeal) {
+            lastActiveMeal.classList.remove("activeButton");
+        }
+        // if the last active meal equals the meal we are on
+        if (lastActiveMeal === meal) {
+            // set the active meal to null
+            lastActiveMeal = null;
+        } else {
+            // otherwise the last active meal does equal the meal
+            lastActiveMeal = meal;
+            // so set the button to be active
+            meal.classList.add("activeButton");
+        }
 
-    filterReciplies();
-  });
+        filterReciplies();
+    });
 });
 
 let lastActiveDiet = null;
 dietTypes.forEach((diet) => {
-  diet.addEventListener("click", (e) => {
-    // remove/add the active class from the button
-    if (lastActiveDiet) {
-      lastActiveDiet.classList.remove("activeButton");
-    }
-    if (lastActiveDiet === diet) {
-      lastActiveDiet = null;
-    } else {
-      lastActiveDiet = diet;
-      diet.classList.add("activeButton");
-    }
-    filterReciplies();
-  });
+    diet.addEventListener("click", (e) => {
+        // remove/add the active class from the button
+        if (lastActiveDiet) {
+            lastActiveDiet.classList.remove("activeButton");
+        }
+        if (lastActiveDiet === diet) {
+            lastActiveDiet = null;
+        } else {
+            lastActiveDiet = diet;
+            diet.classList.add("activeButton");
+        }
+        filterReciplies();
+    });
 });
 
 const filterReciplies = () => {
-  // getAttribute() method returns the value of a specified
-  // attribute on the element
+    // getAttribute() method returns the value of a specified
+    // attribute on the element
 
-  // the active meal equals the last active meal if it contains the data attribute,
-  // otherwise set it to null
-  const activeMeal = lastActiveMeal
-    ? lastActiveMeal.getAttribute("data-meal-select")
-    : null;
+    // the active meal equals the last active meal if it contains the data attribute,
+    // otherwise set it to null
+    const activeMeal = lastActiveMeal
+        ? lastActiveMeal.getAttribute("data-meal-select")
+        : null;
 
-  localStorage.setItem("activeMeal", activeMeal);
+    localStorage.setItem("activeMeal", activeMeal);
 
-  // // the active diel equals the last active diet if it contains the data attribute,
-  // // otherwise set it to null
-  const activeDiet = lastActiveDiet
-    ? lastActiveDiet.getAttribute("data-meal-filter")
-    : null;
+    // // the active diel equals the last active diet if it contains the data attribute,
+    // // otherwise set it to null
+    const activeDiet = lastActiveDiet
+        ? lastActiveDiet.getAttribute("data-meal-filter")
+        : null;
 
-  localStorage.setItem("activeDiet", activeDiet);
+    localStorage.setItem("activeDiet", activeDiet);
 
-  // loop through all our recipes
-  recipes.forEach((recipe) => {
-    // remove the active class from all of them initially
-    recipe.classList.remove("active");
+    // loop through all our recipes
+    recipes.forEach((recipe) => {
+        // remove the active class from all of them initially
+        recipe.classList.remove("active");
 
-    // if the active meal isn't selected and active diet isn't selected, return i.e. do nothing because
-    // there's nothing to check, stop function
-    if (activeMeal === null && activeDiet === null) {
-      return;
-    }
+        // if the active meal isn't selected and active diet isn't selected, return i.e. do nothing because
+        // there's nothing to check, stop function
+        if (activeMeal === null && activeDiet === null) {
+            return;
+        }
 
-    const containsMeal =
-      // if active meal isn't selected set containsMeal to true
-      // otherwise the active recipe contains the activeMeal var defined above
-      activeMeal === null ? true : recipe.classList.contains(activeMeal);
-    const containsDiet =
-      // if active diet isn't selected set containsDiet to true
-      // otherwise the active recipe contains the activeDiet var defined above
-      activeDiet === null ? true : recipe.classList.contains(activeDiet);
+        const containsMeal =
+            // if active meal isn't selected set containsMeal to true
+            // otherwise the active recipe contains the activeMeal var defined above
+            activeMeal === null ? true : recipe.classList.contains(activeMeal);
+        const containsDiet =
+            // if active diet isn't selected set containsDiet to true
+            // otherwise the active recipe contains the activeDiet var defined above
+            activeDiet === null ? true : recipe.classList.contains(activeDiet);
 
-    // if it containsMeal and containsDiet
-    if (containsMeal && containsDiet) {
-      // show the recipe
-      recipe.classList.add("active");
-    }
-  });
+        // if it containsMeal and containsDiet
+        if (containsMeal && containsDiet) {
+            // show the recipe
+            recipe.classList.add("active");
+        }
+    });
 };
 
 // initialise empty array we're going to push our recipe numbers into
 const numArray = [];
 
 window.onload = () => {
-  const savedRecipeList = document.querySelector(".saved-recipe-list");
+    const savedRecipeList = document.querySelector(".saved-recipe-list");
 
-  recipes.forEach((recipe) => {
-    recipeNumber = recipe.getAttribute("data-id");
-    // console.log("recipe number", recipeNumber);
-    // console.log(`Recipe Number = ${recipeNumber} for recipe ${recipeNumber}`);
-    const saveRecipe = recipe.querySelectorAll(".save-recipe");
-    // // if it exists on the page
-    if (saveRecipe) {
-      saveRecipe.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          // add a class to the saved recipe so you can see it has been clicked
-          recipe.classList.add("savedToStorage");
-          // get the num for the recipe clicked
-          const numToSave = recipe.getAttribute("data-id");
-          // push that number into my empty array
-          numArray.push(numToSave);
-          // then save the array to localStorage
-          localStorage.setItem("recipeNumber", numArray);
-        });
-      });
-    }
-    //   show the saved recipe list text
-    if (savedRecipeList) {
-      savedRecipeList.classList.add("active");
-    }
-  });
-
-  const savedRecipeEl = document.querySelectorAll(".recipe-single-saved");
-  if (savedRecipeEl) {
-    savedRecipeEl.forEach((savedRecipe) => {
-      // that saves the one recipe multiple times, need to do it for each recipe
-      // savedRecipe.innerHTML = localStorage.getItem("savedRecipe");
-      savedRecipe.classList.add("active", "saved");
-      savedRecipe.querySelector(".recipe-close");
-      savedRecipe.addEventListener("click", () => {
-        savedRecipe.classList.remove("active", "saved");
-        // localStorage.removeItem("savedRecipe");
-      });
+    recipes.forEach((recipe) => {
+        // assign the recipe number to globally defined variable
+        recipeNumber = recipe.getAttribute("data-id");
+        // console.log("recipe number", recipeNumber);
+        // console.log(`Recipe Number = ${recipeNumber} for recipe ${recipeNumber}`);
+        const saveRecipe = recipe.querySelectorAll(".save-recipe");
+        // // if it exists on the page
+        if (saveRecipe) {
+            saveRecipe.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    // add a class to the saved recipe so you can see it has been clicked
+                    recipe.classList.add("savedToStorage");
+                    // get the num for the recipe clicked
+                    const numToSave = recipe.getAttribute("data-id");
+                    // push that number into my empty array
+                    numArray.push(numToSave);
+                    // then save the array to localStorage
+                    localStorage.setItem("recipeNumber", numArray);
+                });
+            });
+        }
+        //   show the saved recipe list text
+        if (savedRecipeList) {
+            savedRecipeList.classList.add("active");
+        }
     });
-  }
-  showSavedRecipes(recipeNumber);
+
+    const savedRecipeEl = document.querySelectorAll(".recipe-single-saved");
+    if (savedRecipeEl) {
+        savedRecipeEl.forEach((savedRecipe) => {
+            // that saves the one recipe multiple times, need to do it for each recipe
+            // savedRecipe.innerHTML = localStorage.getItem("savedRecipe");
+            savedRecipe.classList.add("active", "saved");
+            savedRecipe.querySelector(".recipe-close");
+            savedRecipe.addEventListener("click", () => {
+                savedRecipe.classList.remove("active", "saved");
+                // localStorage.removeItem("savedRecipe");
+            });
+        });
+    }
 };
 
 // show the saved recipes in local storage on load
-const showSavedRecipes = (recipeNumber) => {
-  // get my saved numbers
-  const savedNum = localStorage.getItem("recipeNumber");
-  // check if saved number/s, otherwise console throws error
-  if (savedNum) {
-    // convert into array
-    let savedNumArray = Array.from(savedNum);
-    // setup clean array because we need to clean savedNumArr (["1", ",", "3" etc])
-    const cleanNumArr = [];
-    // loop through array, just get numbers, remove commas
-    for (let index = 0; index < savedNumArray.length; index++) {
-      const num = savedNumArray[index];
-      if (num !== ",") {
-        // index is a string, convert to integer
-        cleanNumArr.push(+num);
-      }
+const showSavedRecipes = () => {
+    // get my saved numbers
+    const savedNum = localStorage.getItem("recipeNumber");
+    // check if saved number/s, otherwise console throws error
+    if (savedNum) {
+        // convert into array
+        let savedNumArray = Array.from(savedNum);
+        // setup clean array because we need to clean savedNumArr (["1", ",", "3" etc])
+        const cleanNumArr = [];
+        // loop through array, just get numbers, remove commas
+        for (let index = 0; index < savedNumArray.length; index++) {
+            const num = savedNumArray[index];
+            if (num !== ",") {
+                // index is a string, convert to integer
+                cleanNumArr.push(+num);
+            }
+        }
+        // now have a clean integer array [1,2,6 etc]
+        console.log(
+            "here is my local storage array that contains each recipe user clicked on",
+            cleanNumArr
+        );
+
+        // this variable isn't globally accessible - why?
+        console.log("my globally accessible recipe number", recipeNumber);
+
+        // loop through clean array
+
+        // if number in array matches the recipe number
+
+        // set active class to recipe
     }
-    // now have a clean integer array [1,2,6 etc]
-    console.log(
-      "here is my local storage array that contains each recipe user clicked on",
-      cleanNumArr
-    );
-
-    console.log("my globally accessible recipe number", recipeNumber);
-
-    // loop through clean array
-
-    // if number in array matches the recipe number
-
-    // set active class to recipe
-  }
 };
+
+showSavedRecipes();
 
 // 1. Check if the user is on the saved collections page
 // if they are, call showSavedRecipes() func
@@ -192,5 +195,5 @@ const showSavedRecipes = (recipeNumber) => {
 //   }
 // };
 
-// clear all my local saved data
+// clear all my local saved data for testing purposes
 // localStorage.clear();
