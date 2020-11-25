@@ -164,31 +164,43 @@ const getSavedRecipesArray = () => {
 
         // I need to match the numbers within this array to the recipe numbers
         // but how to do without loop within the recipes forEach loop?
-        console.log(
-            "These are my saved local storage array numbers",
-            cleanNumArr
-        );
+        // console.log(
+        //     "These are my saved local storage array numbers",
+        //     cleanNumArr
+        // );
 
         recipes.forEach((recipe) => {
+            // get the data-id number for each recipe
             const recipeNumber = recipe.getAttribute("data-id");
-            console.log(
-                `This recipe has this individual ${recipeNumber} data-id number`
-            );
+
+            // console.log(
+            //     `This recipe has this individual ${recipeNumber} data-id number`
+            // );
+
+            // loop through my saved numbers array
             for (let i = 0; i < cleanNumArr.length; i++) {
                 const num = cleanNumArr[i];
-                // I need to match the numbers now but it gets into this
-                // fucked loop in loop shit
+                console.log(`my saved array number ${num}`);
+                console.log(`my recipe number ${recipeNumber}`);
+
+                // if the recipe number matches the saved array number
+                // add a class of active and saved on dom load
                 if (recipeNumber === num) {
-                    console.log(
-                        "add active class to recipe dom object on page two"
-                    );
+                    console.log("reaching here");
+                    // console.log(recipe);
+                    // recipe.classList.toggle("active", "saved");
                 }
             }
         });
     }
 };
 
-getSavedRecipesArray();
+document.onreadystatechange = () => {
+    if (document.readyState === "complete") {
+        console.log("document is loaded");
+        getSavedRecipesArray();
+    }
+};
 
 // function to check if on page two
 // window.pageTwoCheck = () => {

@@ -1,232 +1,235 @@
 .filters-outer {
-  padding-bottom: 60px;
+    padding-bottom: 60px;
 }
 
 .filter-types {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  .inner {
-    padding: 60px 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    max-width: 1240px;
-    margin: 0 auto;
-    .filter-item {
-      padding: 20px 40px;
-      box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
-      p {
-        font-family: "Fresh Sans Medium", Arial, Helvetica, sans-serif;
-        font-size: 1.6rem;
-        line-height: 1.25em;
-        margin-bottom: 0;
-      }
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .inner {
+        padding: 60px 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1240px;
+        margin: 0 auto;
+        .filter-item {
+            padding: 20px 40px;
+            box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
+            p {
+                font-family: "Fresh Sans Medium", Arial, Helvetica, sans-serif;
+                font-size: 1.6rem;
+                line-height: 1.25em;
+                margin-bottom: 0;
+            }
+        }
     }
-  }
 }
 
 .filter-dietary {
-  position: relative;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 
-  .inner {
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .copy {
-      margin-right: 40px;
+    .inner {
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .copy {
+            margin-right: 40px;
+        }
+        .filter-item {
+            box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
+            padding: 20px 40px;
+            margin-right: 40px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            p {
+                text-align: left;
+                margin-bottom: 0;
+            }
+        }
     }
-    .filter-item {
-      box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
-      padding: 20px 40px;
-      margin-right: 40px;
-      &:last-of-type {
-        margin-right: 0;
-      }
-      p {
-        text-align: left;
-        margin-bottom: 0;
-      }
-    }
-  }
 }
 
 .activeRecipe {
-  border: 2px solid green;
+    border: 2px solid green;
 }
 
 .recipes-outer {
-  background-color: #fafafa;
-  padding-top: 40px;
-  .inner {
-    max-width: 1240px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-flow: wrap;
-    padding: 16px;
-    .recipe-single,
-    .recipe-single-saved {
-      background-color: #ffffff;
-      max-width: 460px;
-      height: 100%;
-      height: 840px;
-      margin: 20px;
-      box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
-      display: none;
-      position: relative;
-      &.active {
-        display: block;
-      }
-      &.saved {
-        border: 2px solid #178841;
-      }
-      &.savedToStorage {
-        border: 2px solid plum;
-      }
-      .recipe-close {
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        min-width: 50px;
-        min-height: 50px;
-        &.active {
-          display: flex;
-        }
-        &:hover {
-          opacity: 0.5;
-        }
-
-        &::before,
-        &::after {
-          position: absolute;
-          left: 15px;
-          content: "";
-          height: 33px;
-          width: 2px;
-          background-color: #333;
-        }
-        &::before {
-          transform: rotate(45deg);
-        }
-        &::after {
-          transform: rotate(-45deg);
-        }
-      }
-
-      .recipe-image {
-        img {
-          min-width: 100%;
-          max-width: 100%;
-          height: 300px;
-          background-color: lightpink;
-          object-fit: cover;
-        }
-      }
-      .inner {
+    background-color: #fafafa;
+    padding-top: 40px;
+    .inner {
+        max-width: 1240px;
+        width: 100%;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        position: relative;
-        .recipe-headline {
-          width: 100%;
-          font-family: "Fresh Sans Bold", Arial, Helvetica, sans-serif;
-        }
-        .dietary-types {
-          width: 100%;
-          p {
-            font-family: "Fresh Sans Bold", Arial, Helvetica, sans-serif;
-          }
-        }
-        .recipe-instructions {
-          padding-bottom: 10px;
-          p {
-            font-family: "Fresh Sans Bold", Arial, Helvetica, sans-serif;
-          }
-        }
-        .recipe-cooking-time {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          position: relative;
-          p {
-            .bold {
-              font-family: "Fresh Sans Bold", Arial, Helvetica, sans-serif;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: wrap;
+        padding: 16px;
+        .recipe-single,
+        .recipe-single-saved {
+            background-color: #ffffff;
+            max-width: 460px;
+            height: 100%;
+            height: 840px;
+            margin: 20px;
+            box-shadow: -2px -1px 18px 4px rgba(0, 0, 0, 0.3);
+            display: none;
+            position: relative;
+            &.active {
+                display: block;
             }
-          }
+            &.saved {
+                border: 2px solid #178841;
+            }
+            &.savedToStorage {
+                border: 2px solid plum;
+            }
+            .recipe-close {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                min-width: 50px;
+                min-height: 50px;
+                &.active {
+                    display: flex;
+                }
+                &:hover {
+                    opacity: 0.5;
+                }
+
+                &::before,
+                &::after {
+                    position: absolute;
+                    left: 15px;
+                    content: "";
+                    height: 33px;
+                    width: 2px;
+                    background-color: #333;
+                }
+                &::before {
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+
+            .recipe-image {
+                img {
+                    min-width: 100%;
+                    max-width: 100%;
+                    height: 300px;
+                    background-color: lightpink;
+                    object-fit: cover;
+                }
+            }
+            .inner {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                position: relative;
+                .recipe-headline {
+                    width: 100%;
+                    font-family: "Fresh Sans Bold", Arial, Helvetica, sans-serif;
+                }
+                .dietary-types {
+                    width: 100%;
+                    p {
+                        font-family: "Fresh Sans Bold", Arial, Helvetica,
+                            sans-serif;
+                    }
+                }
+                .recipe-instructions {
+                    padding-bottom: 10px;
+                    p {
+                        font-family: "Fresh Sans Bold", Arial, Helvetica,
+                            sans-serif;
+                    }
+                }
+                .recipe-cooking-time {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    position: relative;
+                    p {
+                        .bold {
+                            font-family: "Fresh Sans Bold", Arial, Helvetica,
+                                sans-serif;
+                        }
+                    }
+                }
+                .save-recipe {
+                    width: 100%;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
         }
-        .save-recipe {
-          width: 100%;
-          &:hover {
-            opacity: 0.8;
-          }
+        .recipe-single-saved {
+            box-shadow: none;
+            &.saved {
+                border: none;
+            }
+            .recipe-close {
+                display: block;
+                top: 20px;
+            }
         }
-      }
     }
-    .recipe-single-saved {
-      box-shadow: none;
-      &.saved {
-        border: none;
-      }
-      .recipe-close {
-        display: block;
-        top: 20px;
-      }
-    }
-  }
 }
 
 .activeButton {
-  background-color: #ffff0075;
-  border: 1px solid white;
+    background-color: #ffff0075;
+    border: 1px solid white;
 }
 
 .saved-recipe-list {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  display: none;
-  padding: 0 20px 20px;
-  &.active {
-    display: block;
-  }
-  h1 {
-    font-family: "Fresh Sans Medium", Arial, Helvetica, sans-serif;
-    font-size: 3rem;
-    padding-bottom: 10px;
-  }
-  .empty-list {
-    font-size: 2rem;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
     display: none;
+    padding: 0 20px 20px;
     &.active {
-      display: block;
+        display: block;
     }
-  }
+    h1 {
+        font-family: "Fresh Sans Medium", Arial, Helvetica, sans-serif;
+        font-size: 3rem;
+        padding-bottom: 10px;
+    }
+    .empty-list {
+        font-size: 2rem;
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
 }
 
-.deleted {
-  border: 1px solid red;
+.test {
+    border: 1px solid red;
 }
 
 .saved-two {
-  display: block;
+    display: block;
 }
 
 .nav {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  .inner {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
-  }
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    .inner {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px;
+    }
 }
